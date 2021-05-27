@@ -7,7 +7,7 @@ function MyApp({ Component, pageProps }) {
   return (
     // <div className='container mx-auto'>
     // <div className=' mx-auto'>
-    <div>
+    <div className= 'fontRoboto'>
       <Navbar />
       <Component {...pageProps} />
     </div>

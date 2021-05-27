@@ -6,13 +6,16 @@ const stringQuestions = [
     {
         question: 'Create a function concatenateTwoStrings, that executes as named:',
         answer:'function concatenateTwoStrings(str1, str2) {return str1.concat(str2)}',
+    },
+    {
+        question: ''
     }
 ]
 
 const strings = (props = stringQuestions) => {
 
     return (
-        <div>
+        <div className='fontRoboto'>
             <Header pageTitle='strings' />
 
             <div className='mx-auto'>
