@@ -8,7 +8,23 @@ const methodQuestions = [
             `function concatenateTwomethods(str1, str2) {
             return str1.concat(str2);
         }`
-    }
+    },
+    {
+        question: '',
+        answer: '',
+    },
+    {
+        question: '',
+        answer: '',
+    },
+    {
+        question: '',
+        answer: '',
+    },
+    {
+        question: '',
+        answer: '',
+    },
 ]
 
 // function methods(props = methodQuestions) {

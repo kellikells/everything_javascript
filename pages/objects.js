@@ -8,7 +8,31 @@ const objectQuestions = [
             `function concatenateTwoStrings(str1, str2) {
             return str1.concat(str2);
         }`
-    }
+    },
+    {
+        question: '',
+        answer: '',
+    },
+    {
+        question: '',
+        answer: '',
+    },
+    {
+        question: '',
+        answer: '',
+    },
+    {
+        question: '',
+        answer: '',
+    },
+    {
+        question: '',
+        answer: '',
+    },
+    {
+        question: '',
+        answer: '',
+    },
 ]
 
 // function strings(props = stringQuestions) {
