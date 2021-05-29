@@ -1,5 +1,9 @@
-// import { array } from "prop-types";
+import React, { useState, useEffect } from 'react';
+
 import Header from '../components/header/Header';
+import QuestionCard from '../components/cards/QuestionCard';
+import NextButton from '../components/buttons/NextButton';
+import PreviousButton from '../components/buttons/PreviousButton';
 
 const arrayQuestions = [
     {
@@ -30,17 +34,59 @@ const arrayQuestions = [
 // function arrays(props = arrayQuestions) {
 const arrays = (props = arrayQuestions) => {
 
-    return (
-        <div>
+    const [questionNum, setQuestionNum] = useState(0);
 
-        {/* <div className='container'> */}
-            <Header pageTitle='arrays' />
+    function nextButton() {
+        setQuestionNum(questionNum + 1)
+    }
+
+    function previousButton() {
+        setQuestionNum(questionNum - 1)
+    }
+
+    return (
+
+        <div className='fontRoboto h-screen flex justify-between flex-col'>
             <div>
-                {arrayQuestions[0].question}
+                <Header pageTitle='arrays' />
+
+                <div className='mx-auto'>
+                    <QuestionCard
+                        question={arrayQuestions[questionNum].question}
+                        answer={arrayQuestions[questionNum].answer}
+                    />
+                </div>
             </div>
 
+            <div>
+                <div className='flex justify-between py-4'>
+                    <div className='w-1/6 md:w-32'>
+
+                        <PreviousButton
+                            handleClick={previousButton}
+                            disabled=
+                                {questionNum >= 1
+                                    ? false
+                                    : true
+                                }
+                        />
+
+                    </div>
+                    <div className='w-1/6 md:w-32'>
+
+                        <NextButton
+                            handleClick={nextButton}
+                            disabled=
+                                {questionNum <= arrayQuestions.length
+                                    ? false
+                                    : true
+                                }
+                        />
+
+                    </div>
+                </div>
+            </div>
         </div>
     );
 }
-
 export default arrays;

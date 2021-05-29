@@ -16,11 +16,13 @@ export default function QuestionCard({question, answer}) {
     return (
         <div className='text-center text-xl font-bold tracking-wider space-y-8'>
             <ComponentQuestion question={question} />
-            <AnswerButton handleClick={answerButton} text = 
-                {visible
-                    ? 'Hide Answer'
-                    : 'Reveal Answer'
-                }
+            <AnswerButton
+                handleClick={answerButton}
+                text=
+                    {visible
+                        ? 'Hide Answer'
+                        : 'Reveal Answer'
+                    }
                 />
 
             {visible

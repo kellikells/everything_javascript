@@ -1,5 +1,9 @@
-// import { method } from "prop-types";
+import React, { useState, useEffect } from 'react';
+
 import Header from '../components/header/Header';
+import QuestionCard from '../components/cards/QuestionCard';
+import NextButton from '../components/buttons/NextButton';
+import PreviousButton from '../components/buttons/PreviousButton';
 
 const methodQuestions = [
     {
@@ -30,17 +34,59 @@ const methodQuestions = [
 // function methods(props = methodQuestions) {
 const methods = (props = methodQuestions) => {
 
-    return (
-        <div>
+    const [questionNum, setQuestionNum] = useState(0);
 
-        {/* <div className='container'> */}
-            <Header pageTitle='methods' />
+    function nextButton() {
+        setQuestionNum(questionNum + 1)
+    }
+
+    function previousButton() {
+        setQuestionNum(questionNum - 1)
+    }
+
+    return (
+
+        <div className='fontRoboto h-screen flex justify-between flex-col'>
             <div>
-                {methodQuestions[0].question}
+                <Header pageTitle='methods' />
+
+                <div className='mx-auto'>
+                    <QuestionCard
+                        question={methodQuestions[questionNum].question}
+                        answer={methodQuestions[questionNum].answer} />
+                </div>
             </div>
 
+            <div>
+                <div className='flex justify-between py-4'>
+                    <div className='w-1/6 md:w-32'>
+
+                        <PreviousButton
+                            handleClick={previousButton}
+                            disabled=
+                                {questionNum >= 1
+                                    ? false
+                                    : true
+                                }
+                        />
+
+                    </div>
+                    <div className='w-1/6 md:w-32'>
+
+                        <NextButton
+                            handleClick={nextButton}
+
+                            disabled=
+                                {questionNum <= methodQuestions.length
+                                    ? false
+                                    : true
+                                }
+                        />
+
+                    </div>
+                </div>
+            </div>
         </div>
     );
 }
-
 export default methods;

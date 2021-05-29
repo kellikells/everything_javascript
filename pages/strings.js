@@ -46,40 +46,53 @@ const strings = () => {
     const [questionNum, setQuestionNum] = useState(0);
 
     function nextButton() {
-
-        // no more questions, so start from the beginning
-        // if (questionNum >= stringQuestions.length - 1) {
-        //     setQuestionNum(questionNum);
-        // }
         setQuestionNum(questionNum + 1)
     }
-    function previousButton() {
 
-        // already at the first question
-        // if (questionNum == 0) {
-        //     setQuestionNum(questionNum);
-        // }
-        setQuestionNum(questionNum -1)
+    function previousButton() {
+        setQuestionNum(questionNum - 1)
     }
 
     return (
- 
+
         <div className='fontRoboto h-screen flex justify-between flex-col'>
             <div>
                 <Header pageTitle='strings' />
 
                 <div className='mx-auto'>
-                    <QuestionCard question={stringQuestions[questionNum].question} answer={stringQuestions[questionNum].answer} />
+                    <QuestionCard
+                        question={stringQuestions[questionNum].question}
+                        answer={stringQuestions[questionNum].answer}
+                    />
                 </div>
             </div>
 
             <div>
                 <div className='flex justify-between py-4'>
                     <div className='w-1/6 md:w-32'>
-                        <PreviousButton handleClick={previousButton} />
+
+                        <PreviousButton
+                            handleClick={previousButton}
+                            disabled=
+                            {questionNum >= 1
+                                ? false
+                                : true
+                            }
+                        />
+
                     </div>
                     <div className='w-1/6 md:w-32'>
-                        <NextButton handleClick={nextButton} />
+
+                        <NextButton
+                            handleClick={nextButton}
+
+                            disabled=
+                                {questionNum <= stringQuestions.length
+                                    ? false
+                                    : true
+                                }
+                        />
+
                     </div>
                 </div>
             </div>
