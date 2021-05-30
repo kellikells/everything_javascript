@@ -15,16 +15,23 @@ export default function Navbar() {
     }
 
     return (
-        <nav className='bg-gray-100'>
+        <nav  >
+        {/* <nav className='bg-gray-100'> */}
             <div className='px-6'>
 
-                <div className='flex justify-between'>
+                <div className='flex justify-between '>
                     <div className='flex space-x-4'>
 
                         {/*  ---------- LOGO ----------  */}
                         <div className='flex items-center py-5 px-2 hover:text-red-700 pl-2'>
                             {/* <img className='h6 w-6 mr-2' src='/logo.svg' alt='logo' /> */}
-                            <Link href='/'><a>JS Algorithm Practice</a></Link>
+                            <Link href='/'>
+                                <a
+                                    onClick={() => setActiveLink(0)}
+                                >
+                                    JS Algorithm Practice
+                                </a>
+                            </Link>
                         </div>
 
                         {/*  ---------- Left side: nav ----------  */}
@@ -75,7 +82,7 @@ export default function Navbar() {
                 {myLinks.map((info, index) => (
                     <Link key={index} href={`/${info.toLowerCase()}`}  >
                         <a
-                            // onClick={toggleIsActive}
+                            onClick={() => setActiveLink({ info })}
                             className='block py-2 px-4 text-sm hover:bg-gray-300'
                         >
                             {info}

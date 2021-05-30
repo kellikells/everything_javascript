@@ -1,8 +1,8 @@
 
 export default function Header(props) {
     return (
-        <div className='text-center font-bold text-2xl uppercase py-14'>
-            <h2>{props.pageTitle}</h2>
+        <div className='text-center font-bold text-lg md:text-4xl uppercase pt-8 pb-4 md:py-14'>
+            <h2>{props.questionTitle}</h2>
         </div>
     )
 }
