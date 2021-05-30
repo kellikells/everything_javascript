@@ -46,7 +46,7 @@ const methods = (props = methodQuestions) => {
 
     return (
 
-        <div className='fontRoboto h-screen flex justify-between flex-col'>
+        <div className='fontRoboto h-5/6 flex justify-between flex-col'>
             <div>
                 <Header pageTitle='methods' />
 
@@ -58,7 +58,7 @@ const methods = (props = methodQuestions) => {
             </div>
 
             <div>
-                <div className='flex justify-between py-4'>
+                <div className='flex justify-between'>
                     <div className='w-1/6 md:w-32'>
 
                         <PreviousButton

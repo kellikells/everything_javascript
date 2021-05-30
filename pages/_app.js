@@ -6,7 +6,7 @@ import '../styles/index.css';
 function MyApp({ Component, pageProps }) {
   return (
 
-    <div className= 'fontRoboto h-full w-full m-0'>
+    <div className= 'fontRoboto h-screen w-full m-0'>
       <Navbar />
       <Component {...pageProps} />
     </div>

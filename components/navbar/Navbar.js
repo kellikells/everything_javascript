@@ -5,7 +5,7 @@ import useToggle from '../../hooks/useToggle';
 
 export default function Navbar() {
     const [isMobileSize, toggleIsMobileSize] = useToggle(false);
-    const [activeLink, setActiveLink] = useState(null);
+    const [activeLink, setActiveLink] = useState(0);
 
     const myLinks = ['Strings', 'Arrays', 'Objects', 'Methods'];
 

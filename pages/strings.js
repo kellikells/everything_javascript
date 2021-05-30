@@ -5,6 +5,8 @@ import QuestionCard from '../components/cards/QuestionCard';
 import NextButton from '../components/buttons/NextButton';
 import PreviousButton from '../components/buttons/PreviousButton';
 
+import { stringData } from '../data/index';
+
 const stringQuestions = [
     {
         question: 'Create a function, concatenateStrings, that takes its parameters and returns one string',
@@ -55,10 +57,11 @@ const strings = () => {
 
     return (
 
-        <div className='fontRoboto h-screen flex justify-between flex-col'>
+        <div className='fontRoboto h-5/6 flex justify-between flex-col'>
             <div>
                 <Header pageTitle='strings' />
 
+                <p>{stringData[0].question}</p>
                 <div className='mx-auto'>
                     <QuestionCard
                         question={stringQuestions[questionNum].question}
@@ -68,7 +71,7 @@ const strings = () => {
             </div>
 
             <div>
-                <div className='flex justify-between py-4'>
+                <div className='flex justify-between'>
                     <div className='w-1/6 md:w-32'>
 
                         <PreviousButton
@@ -85,7 +88,6 @@ const strings = () => {
 
                         <NextButton
                             handleClick={nextButton}
-
                             disabled=
                                 {questionNum <= stringQuestions.length
                                     ? false

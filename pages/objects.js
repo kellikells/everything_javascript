@@ -55,7 +55,7 @@ const objects = (props = objectQuestions) => {
 
     return (
 
-        <div className='fontRoboto h-screen flex justify-between flex-col'>
+        <div className='fontRoboto h-5/6 flex justify-between flex-col'>
             <div>
                 <Header pageTitle='objects' />
 
@@ -68,7 +68,7 @@ const objects = (props = objectQuestions) => {
             </div>
 
             <div>
-                <div className='flex justify-between py-4'>
+                <div className='flex justify-between'>
                     <div className='w-1/6 md:w-32'>
 
                         <PreviousButton
