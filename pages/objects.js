@@ -1,5 +1,10 @@
-// import { string } from "prop-types";
+import React, { useState, useEffect } from 'react';
+
 import Header from '../components/header/Header';
+import QuestionCard from '../components/cards/QuestionCard';
+import NextButton from '../components/buttons/NextButton';
+import PreviousButton from '../components/buttons/PreviousButton';
+
 
 const objectQuestions = [
     {
@@ -8,21 +13,88 @@ const objectQuestions = [
             `function concatenateTwoStrings(str1, str2) {
             return str1.concat(str2);
         }`
-    }
+    },
+    {
+        question: '',
+        answer: '',
+    },
+    {
+        question: '',
+        answer: '',
+    },
+    {
+        question: '',
+        answer: '',
+    },
+    {
+        question: '',
+        answer: '',
+    },
+    {
+        question: '',
+        answer: '',
+    },
+    {
+        question: '',
+        answer: '',
+    },
 ]
 
 // function strings(props = stringQuestions) {
 const objects = (props = objectQuestions) => {
 
-    return (
-        <div>
+    const [questionNum, setQuestionNum] = useState(0);
 
-        {/* <div className='container'> */}
-            <Header pageTitle='objects' />
+    function nextButton() {
+        setQuestionNum(questionNum + 1)
+    }
+
+    function previousButton() {
+        setQuestionNum(questionNum - 1)
+    }
+
+    return (
+
+        <div className='fontRoboto h-screen flex justify-between flex-col'>
             <div>
-                {objectQuestions[0].question}
+                <Header pageTitle='objects' />
+
+                <div className='mx-auto'>
+                    <QuestionCard
+                        question={objectQuestions[questionNum].question}
+                        answer={objectQuestions[questionNum].answer}
+                    />
+                </div>
             </div>
 
+            <div>
+                <div className='flex justify-between py-4'>
+                    <div className='w-1/6 md:w-32'>
+
+                        <PreviousButton
+                            handleClick={previousButton}
+                            disabled=
+                                {questionNum >= 1
+                                    ? false
+                                    : true
+                                }
+                        />
+
+                    </div>
+                    <div className='w-1/6 md:w-32'>
+
+                        <NextButton
+                            handleClick={nextButton}
+                            disabled=
+                                {questionNum <= objectQuestions.length
+                                    ? false
+                                    : true
+                                }
+                        />
+
+                    </div>
+                </div>
+            </div>
         </div>
     );
 }
