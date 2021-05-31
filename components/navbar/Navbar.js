@@ -15,7 +15,7 @@ export default function Navbar() {
     }
 
     return (
-        <nav  >
+        <nav className='bg-green-800 text-white' >
         {/* <nav className='bg-gray-100'> */}
             <div className='px-6'>
 
@@ -34,15 +34,7 @@ export default function Navbar() {
                             </Link>
                         </div>
 
-                        {/*  ---------- Left side: nav ----------  */}
-                        {/* <div className='hidden md:flex items-center space-x-1'>
-                            <Link href='/'>
-                                <a className='py-6 px-3 text-gray-500 hover:text-gray-900'>Home</a>
-                            </Link>
-                            <Link href='/' >
-                                <a className='py-6 px-3 text-gray-500 hover:text-gray-900'>second link</a>
-                            </Link>
-                        </div> */}
+                
 
                     </div>
 
@@ -54,8 +46,8 @@ export default function Navbar() {
                                     onClick={() => setActiveLink({ info })}
                                     className={
                                         activeLink.info == info
-                                            ? 'bg-yellow-100 py-5 px-3 font-semibold hover:text-red-700'
-                                            : 'py-5 px-3 font-semibold hover:text-red-700'
+                                            ? 'bg-yellow-100 py-5 px-3 hover:text-red-700'
+                                            : ' transition duration-500 ease-in-out py-5 px-3 hover:text-red-700 hover:p-2 hover:bg-gray-100'
                                     }
                                 >
                                     {info} 
