@@ -23,11 +23,9 @@ const strings = () => {
 
         <div className='fontRoboto h-5/6 flex justify-between flex-col
          '>
-        {/* <div className='fontRoboto h-5/6 flex justify-between flex-col bg-green-100 '> */}
+       
             <div>
-                {/* <Header pageTitle='strings' /> */}
-
-                
+                            
     
                 <div className='mx-auto'>
                     <QuestionCard
