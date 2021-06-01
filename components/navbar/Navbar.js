@@ -15,11 +15,11 @@ export default function Navbar() {
     }
 
     return (
-        <nav className='bg-green-800 text-white' >
+        <nav className='bg-red-400 text-white' >
         {/* <nav className='bg-gray-100'> */}
             <div className='px-6'>
 
-                <div className='flex justify-between '>
+                <div className='flex justify-between md:w-2/3 md:mx-auto'>
                     <div className='flex space-x-4'>
 
                         {/*  ---------- LOGO ----------  */}

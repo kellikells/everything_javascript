@@ -41,7 +41,7 @@ const strings = () => {
 
             <div>
                 <div className='flex justify-between'>
-                    <div className='w-1/4 md:w-32'>
+                    <div className='w-1/5 md:w-32'>
 
                         <PreviousButton
                             handleClick={previousButton}
@@ -53,7 +53,7 @@ const strings = () => {
                         />
 
                     </div>
-                    <div className='w-1/4 md:w-32'>
+                    <div className='w-1/5 md:w-32'>
 
                         <NextButton
                             handleClick={nextButton}
