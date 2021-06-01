@@ -37,6 +37,7 @@ const strings = () => {
                 </div>
             </div>
 
+            {/* <footer></footer> */}
             <div>
                 <div className='flex justify-between'>
                     <div className='w-1/5 md:w-32'>
