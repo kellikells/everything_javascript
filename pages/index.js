@@ -16,8 +16,11 @@ const Home = () => {
       </Head>
 
 
+      <body className='min-h-screen flex flex-col'>
+      {/* <body className='min-h-full flex flex-col'> */}
 
-      <div className='h-screen'>
+
+        <div className='h-screen'>
 
           <div className='h-1/5'></div>
           <div className='flex flex-col items-center justify-center p-2 gap-y-4'>
@@ -26,7 +29,7 @@ const Home = () => {
 
             <Link href='/arrays'><a className='w-1/2 px-4 py-3 text-center bg-green-400 text-4xl hover:bg-white font-bold text-white hover:text-gray-900 rounded-lg hover:shadow-xl transition duration-300'>Arrays</a></Link>
 
-            {/* <div className='flex space-x-8 py-4 justify-center items-center'> */}
+ 
             <Link href='/objects'><a className='w-1/2 px-4 py-3 text-center bg-yellow-400 text-4xl hover:bg-white font-bold text-white hover:text-gray-900 rounded-lg hover:shadow-xl transition duration-300'>Objects</a></Link>
 
 
@@ -45,9 +48,11 @@ const Home = () => {
         </div> */}
           </div>
         </div>
- 
 
+
+      </body>
     </div>
+
 
   );
 };

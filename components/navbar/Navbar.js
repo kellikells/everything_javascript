@@ -11,15 +11,14 @@ export default function Navbar() {
 
     // mobile button function 
     function showMobileMenu() {
-        // console.log('clicked');
+        //  console.log('clicked');
     }
 
     return (
         <nav className='bg-red-400 text-white' >
-        {/* <nav className='bg-gray-100'> */}
             <div className='px-6'>
 
-                <div className='flex justify-between md:w-2/3 md:mx-auto'>
+                <div className='container flex justify-between md:mx-auto'>
                     <div className='flex space-x-4'>
 
                         {/*  ---------- LOGO ----------  */}
@@ -34,7 +33,7 @@ export default function Navbar() {
                             </Link>
                         </div>
 
-                
+
 
                     </div>
 
@@ -50,7 +49,7 @@ export default function Navbar() {
                                             : ' transition duration-500 ease-in-out py-5 px-3 hover:text-red-700 hover:p-2 hover:bg-gray-100'
                                     }
                                 >
-                                    {info} 
+                                    {info}
                                 </a>
                             </Link>
                         ))}
