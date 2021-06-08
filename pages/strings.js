@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 
+import Navbar from '../components/navbar/Navbar';
 import Header from '../components/header/Header';
 import QuestionCard from '../components/cards/QuestionCard';
 import NextButton from '../components/buttons/NextButton';
@@ -17,7 +18,7 @@ const strings = () => {
         setQuestionNum(questionNum - 1)
     }
     return (
-         <div className='fontRoboto w-full flex flex-col min-h-screen mx-auto'>
+         <div className='fontRoboto w-full flex flex-col h-screen mx-auto'>
         {/* // <div className='min-h-screen container mx-auto fontRoboto  flex flex-col justify-between'> */}
         {/* // <div className='min-h-screen container mx-auto fontRoboto  flex flex-col justify-between'> */}
             <div className='flex-grow'>

@@ -3,6 +3,7 @@ import '@fortawesome/fontawesome-free/css/all.min.css';
 import Navbar from '../components/navbar/Navbar';
 import Footer from '../components/footer/Footer';
 import '../styles/index.css';
+import Layout from '../components/Layout';
 
 
 function MyApp({ Component, pageProps }) {
@@ -15,12 +16,16 @@ function MyApp({ Component, pageProps }) {
     // </div>
 
 
-    <div className='fontRoboto m-0 min-h-screen w-full flex flex-col md:mx-auto'>
-      <Navbar />
-      <div className='md:w-2/3 md:mx-auto'>
-        <Component {...pageProps} />
-      </div>
-
+    <div className='fontRoboto m-0 w-full flex flex-col md:mx-auto'>
+      {/* <Layout> */}
+        <Navbar />
+        <div className='md:w-2/3 md:mx-auto'>
+           {/* <Layout> */}
+          <Component {...pageProps} />
+          {/* </Layout> */}
+        </div>
+      {/* </Layout> */}
+      
     </div>
   );
 }

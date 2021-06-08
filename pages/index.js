@@ -9,6 +9,7 @@ const Home = () => {
   return (
 
     <div>
+      
       <Head>
         <title>Algorithm Questions</title>
         <meta name='description' content='algorithm questions javascript' />
@@ -16,7 +17,7 @@ const Home = () => {
       </Head>
 
 
-      <body className='min-h-screen flex flex-col'>
+      <body className='h-full flex flex-col'>
       {/* <body className='min-h-full flex flex-col'> */}
 
 
