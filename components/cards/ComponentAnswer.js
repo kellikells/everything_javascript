@@ -1,7 +1,12 @@
-export default function ComponentAnswer(props) {
+export default function ComponentAnswer({ functionName, answer }) {
+    let openCurlyBrace = '{';
+    let closeCurlyBrace = '}';
+
     return (
-        <ul className='text-xl'>
-            <li className='p-10'>{props.answers}</li>
-        </ul>
+        <div className='max-w-max mx-auto text-xl space-y-2'>
+            <div>function <span>{functionName}</span> {openCurlyBrace}</div>
+            <div className='p-2 bg-yellow-200'>{answer}</div>
+            <div>{closeCurlyBrace}</div>
+        </div>
     )
 }
