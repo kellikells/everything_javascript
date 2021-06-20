@@ -1,22 +1,20 @@
 import Head from 'next/head';
 import Navbar from './Navbar';
-import Meta from './Meta';
+// import Meta from './Meta';
 
 import '@fortawesome/fontawesome-free/css/all.min.css';
 
 
-const Layout = ({ children }) => {
+const Layout = ({ children, title ='Algo Practice', }) => {
     return (
-        <>
+        <div>
             {/* <Meta /> */}
 
-            {/* <Head>
-                <title>Algorithm Questions</title>
-                <meta name='description' content='algorithm questions javascript' />
-                <link rel='icon' href='/favicon.ico' />
-            </Head> */}
+            <Head>
+                <title>{title}</title>
+         </Head>
 
-            <div className='fontRoboto m-0 flex flex-col w-full min-h-screen md:mx-auto'>
+            <div className='fontRoboto m-0 flex flex-col w-screen h-screen md:mx-auto'>
 
                 <Navbar />
 
@@ -25,7 +23,7 @@ const Layout = ({ children }) => {
                 </main>
 
             </div>
-        </>
+        </div>
     )
 }
 
