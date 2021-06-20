@@ -1,9 +1,9 @@
 import React, { useState } from 'react';
 
-import NextButton from '../buttons/NextButton';
-import PreviousButton from '../buttons/PreviousButton';
+import NextButton from './NextButton';
+import PreviousButton from './PreviousButton';
 
-export default function Footer() {
+export default function FooterButtons() {
     
 
     return (

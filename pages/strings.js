@@ -1,12 +1,11 @@
 import React, { useState, useEffect } from 'react';
 
-import Navbar from '../components/navbar/Navbar';
+// import Navbar from '../components/navbar/Navbar';
 import Header from '../components/header/Header';
 import QuestionCard from '../components/cards/QuestionCard';
 import NextButton from '../components/buttons/NextButton';
 import PreviousButton from '../components/buttons/PreviousButton';
-import Footer from '../components/footer/Footer';
-
+import FooterButtons from '../components/buttons/FooterButtons';
 import { stringData } from '../data/index';
 
 const strings = () => {
@@ -18,9 +17,8 @@ const strings = () => {
         setQuestionNum(questionNum - 1)
     }
     return (
-         <div className='fontRoboto w-full flex flex-col h-screen mx-auto'>
-        {/* // <div className='min-h-screen container mx-auto fontRoboto  flex flex-col justify-between'> */}
-        {/* // <div className='min-h-screen container mx-auto fontRoboto  flex flex-col justify-between'> */}
+        //  <div className='fontRoboto w-full flex flex-col h-screen mx-auto'>
+    <>
             <div className='flex-grow'>
                 <QuestionCard
                      title={stringData[questionNum].title}
@@ -29,8 +27,7 @@ const strings = () => {
                     answer={stringData[questionNum].answer}
                 />
             </div >
-                {/* <Footer />
-                </div> */}
+        
 
             <footer className='container relative mx-auto'>
                 <div className='  px-4'>
@@ -62,7 +59,7 @@ const strings = () => {
                     </div>
                 </div>
             </footer> 
-        </div>
+       </>
     );
 }
 

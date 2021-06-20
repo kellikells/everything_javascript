@@ -1,11 +1,11 @@
 import React, { useState, useEffect } from 'react';
 
-import Navbar from '../components/navbar/Navbar';
+
 import Header from '../components/header/Header';
 import QuestionCard from '../components/cards/QuestionCard';
 import NextButton from '../components/buttons/NextButton';
 import PreviousButton from '../components/buttons/PreviousButton';
-import Footer from '../components/footer/Footer';
+import FooterButtons from '../components/buttons/FooterButtons';
 
 import { arrayData } from '../data/index';
 

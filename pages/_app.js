@@ -1,9 +1,9 @@
 import '@fortawesome/fontawesome-free/css/all.min.css';
 
-import Navbar from '../components/navbar/Navbar';
-import Footer from '../components/footer/Footer';
+// import Navbar from '../components/navbar/Navbar';
+// import Footer from '../components/buttons/FooterButtons';
 import '../styles/index.css';
-import Layout from '../components/Layout';
+import Layout from '../components/commons/Layout';
 
 
 function MyApp({ Component, pageProps }) {
@@ -16,17 +16,14 @@ function MyApp({ Component, pageProps }) {
     // </div>
 
 
-    <div className='fontRoboto m-0 w-full flex flex-col md:mx-auto'>
-      {/* <Layout> */}
-        <Navbar />
-        <div className='md:w-2/3 md:mx-auto'>
-           {/* <Layout> */}
-          <Component {...pageProps} />
-          {/* </Layout> */}
-        </div>
-      {/* </Layout> */}
-      
-    </div>
+    // <div className='fontRoboto m-0 w-full flex flex-col md:mx-auto'>
+    //   <div className='md:w-2/3 md:mx-auto'>
+
+    <Layout>
+      <Component {...pageProps} />
+    </Layout>
+
+
   );
 }
 
