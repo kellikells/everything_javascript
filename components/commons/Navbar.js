@@ -22,23 +22,19 @@ export default function Navbar() {
                     <div className='flex space-x-4'>
 
                         {/*  ---------- LOGO ----------  */}
-                        <div className='flex items-center py-5 px-2 hover:text-red-700 pl-2'>
+                        <div className='flex items-center py-5 px-2 hover:text-red-700 pl-2 md:pl-0'>
                             {/* <img className='h6 w-6 mr-2' src='/logo.svg' alt='logo' /> */}
                             <Link href='/'>
-                                <a
-                                    onClick={() => setActiveLink(0)}
-                                >
+                                <a onClick={() => setActiveLink(0)}>
                                     JS Algorithm Practice
                                 </a>
                             </Link>
                         </div>
 
-
-
                     </div>
 
                     {/*  ---------- Right side: nav ----------  */}
-                    <div className='hidden md:flex items-center space-x-1 pr-4'>
+                    <div className='hidden md:flex items-center space-x-1 pr-4 md:pr-0'>
                         {myLinks.map((info, index) => (
                             <Link key={index} href={`/${info.toLowerCase()}`} >
                                 <a
@@ -81,7 +77,6 @@ export default function Navbar() {
                     </Link>
                 ))}
             </div>
-
         </nav >
     );
 }

@@ -5,14 +5,14 @@ import Navbar from './Navbar';
 import '@fortawesome/fontawesome-free/css/all.min.css';
 
 
-const Layout = ({ children, title ='Algo Practice', }) => {
+const Layout = ({ children, title = 'Algo Practice' }) => {
     return (
         <div>
             {/* <Meta /> */}
 
             <Head>
                 <title>{title}</title>
-         </Head>
+            </Head>
 
             <div className='fontRoboto m-0 flex flex-col w-screen h-screen md:mx-auto'>
 
