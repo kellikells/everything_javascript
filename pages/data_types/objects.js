@@ -2,11 +2,11 @@ import React, { useState, useEffect } from 'react';
 
 import Navbar from '../components/navbar/Navbar';
 import Header from '../components/header/Header';
-import QuestionCard from '../components/cards/QuestionCard';
-import NextButton from '../components/buttons/NextButton';
-import PreviousButton from '../components/buttons/PreviousButton';
-import FooterButtons from '../components/buttons/FooterButtons';
-import { objectData } from '../data/index';
+import QuestionCard from '../../components/cards/QuestionCard';
+import NextButton from '../../components/buttons/NextButton';
+import PreviousButton from '../../components/buttons/PreviousButton';
+import FooterButtons from '../../components/buttons/FooterButtons';
+import { objectData } from '../../data/index';
 
 const objects = () => {
     const [questionNum, setQuestionNum] = useState(0);
