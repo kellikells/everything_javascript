@@ -26,7 +26,7 @@ const strings = () => {
 
             <footer >
                 <div className='flex justify-between'>
-                    <div className='w-1/5'>
+                    <div className='w-1/5 md:w-32'>
                         <PreviousButton
                             handleClick={previousButton}
                             disabled=
@@ -36,7 +36,7 @@ const strings = () => {
                             }
                         />
                     </div>
-                    <div className='w-1/5'>
+                    <div className='w-1/5 md:w-32'>
                         <NextButton
                             handleClick={nextButton}
                             disabled=
