@@ -1,9 +1,9 @@
 import React, { useState } from 'react';
 
-import QuestionCard from '../components/cards/QuestionCard';
-import NextButton from '../components/buttons/NextButton';
-import PreviousButton from '../components/buttons/PreviousButton';
-import { stringData } from '../data/index';
+import QuestionCard from '../../components/cards/QuestionCard';
+import NextButton from '../../components/buttons/NextButton';
+import PreviousButton from '../../components/buttons/PreviousButton';
+import { stringData } from '../../data/index';
 
 const strings = () => {
     const [questionNum, setQuestionNum] = useState(0);
