@@ -1,4 +1,4 @@
-import Header from '../header/Header';
+import Header from './Header';
 import ComponentQuestion from './ComponentQuestion';
 import ComponentAnswer from './ComponentAnswer';
 import AnswerButton from '../buttons/AnswerButton';
@@ -24,8 +24,6 @@ export default function QuestionCard({ title, functionName, question, answer }) 
                     question={question}
                 />
 
-
-
                 {visible
                     ? <div><ComponentAnswer functionName={functionName} answer={answer} /></div>
                     : null
@@ -39,7 +37,6 @@ export default function QuestionCard({ title, functionName, question, answer }) 
                         : 'Show Answer'
                     }
                 />
-
             </div>
         </>
     );

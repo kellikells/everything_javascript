@@ -2,14 +2,13 @@ import React, { useState, useEffect } from 'react';
 
 import Navbar from '../components/navbar/Navbar';
 import Header from '../components/header/Header';
-import QuestionCard from '../components/cards/QuestionCard';
-import NextButton from '../components/buttons/NextButton';
-import PreviousButton from '../components/buttons/PreviousButton';
-import Footer from '../components/footer/Footer';
+import QuestionCard from '../../components/cards/QuestionCard';
+import NextButton from '../../components/buttons/NextButton';
+import PreviousButton from '../../components/buttons/PreviousButton';
+import FooterButtons from '../../components/buttons/FooterButtons';
+import { objectData } from '../../data/index';
 
-import { stringData } from '../data/index';
-
-const strings = () => {
+const objects = () => {
     const [questionNum, setQuestionNum] = useState(0);
     function nextButton() {
         setQuestionNum(questionNum + 1)
@@ -18,18 +17,18 @@ const strings = () => {
         setQuestionNum(questionNum - 1)
     }
     return (
-         <div className='fontRoboto w-full flex flex-col h-screen mx-auto'>
-        {/* // <div className='min-h-screen container mx-auto fontRoboto  flex flex-col justify-between'> */}
-        {/* // <div className='min-h-screen container mx-auto fontRoboto  flex flex-col justify-between'> */}
+        <div className='fontRoboto w-full flex flex-col h-screen mx-auto'>
+            {/* // <div className='min-h-screen container mx-auto fontRoboto  flex flex-col justify-between'> */}
+            {/* // <div className='min-h-screen container mx-auto fontRoboto  flex flex-col justify-between'> */}
             <div className='flex-grow'>
                 <QuestionCard
-                     title={stringData[questionNum].title}
-                    functionName={stringData[questionNum].functionName}
-                    question={stringData[questionNum].question}
-                    answer={stringData[questionNum].answer}
+                    title={objectData[questionNum].title}
+                    functionName={objectData[questionNum].functionName}
+                    question={objectData[questionNum].question}
+                    answer={objectData[questionNum].answer}
                 />
             </div >
-                {/* <Footer />
+            {/* <Footer />
                 </div> */}
 
             <footer className='container relative mx-auto'>
@@ -52,7 +51,7 @@ const strings = () => {
                             <NextButton
                                 handleClick={nextButton}
                                 disabled=
-                                {questionNum <= stringData.length - 1
+                                {questionNum <= objectData.length - 1
                                     ? false
                                     : true
                                 }
@@ -61,9 +60,9 @@ const strings = () => {
                         </div>
                     </div>
                 </div>
-            </footer> 
+            </footer>
         </div>
     );
 }
 
-export default strings;
+export default objects;

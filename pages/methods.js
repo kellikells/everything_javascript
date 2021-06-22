@@ -5,8 +5,7 @@ import Header from '../components/header/Header';
 import QuestionCard from '../components/cards/QuestionCard';
 import NextButton from '../components/buttons/NextButton';
 import PreviousButton from '../components/buttons/PreviousButton';
-import Footer from '../components/footer/Footer';
-
+import FooterButtons from '../components/buttons/FooterButtons';
 import { methodData } from '../data/index';
 
 const methods = () => {
