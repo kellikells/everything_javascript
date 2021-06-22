@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 
-import QuestionCard from '../components/cards/QuestionCard';
+import QuestionCard from '../components/data_types_cards/QuestionCard';
 import NextButton from '../components/buttons/NextButton';
 import PreviousButton from '../components/buttons/PreviousButton';
 import { stringData } from '../data/index';

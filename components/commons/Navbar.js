@@ -7,7 +7,7 @@ export default function Navbar() {
     const [isMobileSize, toggleIsMobileSize] = useToggle(false);
     const [activeLink, setActiveLink] = useState(0);
 
-    const myLinks = ['Strings', 'Arrays', 'Objects', 'Methods'];
+    const myLinks = ['Strings', 'Arrays', 'Objects', 'Numbers'];
 
     // mobile button function 
     function showMobileMenu() {
@@ -36,7 +36,7 @@ export default function Navbar() {
                     {/*  ---------- Right side: nav ----------  */}
                     <div className='hidden md:flex items-center space-x-1 pr-4 md:pr-0'>
                         {myLinks.map((info, index) => (
-                            <Link key={index} href={`/${info.toLowerCase()}`} >
+                            <Link key={index} href={`/data_types/${info.toLowerCase()}`} >
                                 <a
                                     onClick={() => setActiveLink({ info })}
                                     className={
@@ -67,7 +67,7 @@ export default function Navbar() {
             {/*  ---------- MOBILE MENU  ----------  */}
             <div className={isMobileSize ? 'mobile-menu md:hidden' : 'hidden mobile-menu md:hidden'}>
                 {myLinks.map((info, index) => (
-                    <Link key={index} href={`/${info.toLowerCase()}`}  >
+                    <Link key={index} href={`/data_types/${info.toLowerCase()}`}  >
                         <a
                             onClick={() => setActiveLink({ info })}
                             className='block py-2 px-4 text-sm hover:bg-gray-300'

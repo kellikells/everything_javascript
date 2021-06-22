@@ -21,7 +21,7 @@ const Home = () => {
                 </Link>
       ))} */}
 
-
+        <Link href='/projects/palindrome_checker'><a className='w-1/2 px-4 py-3 text-center bg-green-400 text-4xl hover:bg-white font-bold text-white hover:text-gray-900 rounded-lg hover:shadow-xl transition duration-300'>Palindrome Checker</a></Link>
 
         <Link href='/data_types/strings'><a className='w-1/2 px-4 py-3 text-center bg-yellow-400 text-4xl hover:bg-white font-bold text-white hover:text-gray-900 rounded-lg hover:shadow-xl transition duration-300'>Strings</a></Link>
 
