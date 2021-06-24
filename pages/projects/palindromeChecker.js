@@ -5,7 +5,7 @@ import React, { useState } from 'react';
 // import PreviousButton from '../../components/buttons/PreviousButton';
 // import { stringData } from '../../data/index';
 
-const  = () => {
+const palindromeChecker = () => {
     // const [questionNum, setQuestionNum] = useState(0);
     // function nextButton() {
     //     setQuestionNum(questionNum + 1)
@@ -52,6 +52,6 @@ const  = () => {
     // );
 }
 
-export default strings;
+export default palindromeChecker;
 
 
