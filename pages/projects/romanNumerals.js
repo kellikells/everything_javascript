@@ -11,16 +11,8 @@
 
 // 1-3, 4-8, 9-13
 
-// if the length of 'whatever' is greater than 3, switch to ... 
-
-// const romanNums = {
-//     I: 1,
-//     V: 5,
-//     X: 10,
-// }
 
 let I = [1, 'I'];
-
 let V = [5, 'V'];
 let X = [10, 'X'];
 let L = [50, 'L'];
@@ -28,58 +20,58 @@ let C = [100, 'C'];
 let D = [500, 'D'];
 let M = [1000, 'M'];
 
-romanArr = ['M', 'D', 'C', 'L', 'X', 'V', 'I'];
-numsArr = [1000, 500, 100, 50, 10, 5, 1];
+let romanArr = ['M', 'D', 'C', 'L', 'X', 'V', 'I'];
+let numsArr = [1000, 500, 100, 50, 10, 5, 1];
 
-
-
-
-// -----------------------------
-let letter = romanArr[0]
-
-// const RN_OBJ = {
-//     I: 1,
-//     V: 5,
-//     X: 10,
-//     L: 50,
-//     C: 100,
-//     D: 500,
+// const ROMAN_NUMS_OBJ = {
 //     M: 1000,
+//     D: 500,
+//     C: 100,
+//     L: 50,
+//     X: 10,
+//     V: 5,
+//     I: 1,
 // }
-const RN_OBJ = {
+const ROMAN_NUMS_OBJ = {
     M: 1000,
+    CM: 900,
     D: 500,
+    CD: 400,
     C: 100,
+    XC: 90,
     L: 50,
+    XL: 40,
     X: 10,
+    IX: 9,
     V: 5,
+    IV: 4,
     I: 1,
 }
+
+// I, II, III, IV, V, VI, VII, VIII, IX, X 
 
 function convertToRoman(num) {
     let currentTotal = 0;
     let str = '';
-    for (let key in RN_OBJ) {
+    for (let key in ROMAN_NUMS_OBJ) {
 
+        // if 4, 9, 40, 90,400,900
+        // these are exceptions
+        while (num - ROMAN_NUMS_OBJ[key] >= 0) {
 
-        // if(RN_OBJ[key] <= num) {
-        while ((currentTotal + RN_OBJ[key]) <= num) {
-            currentTotal += RN_OBJ[key];
-
-            // check if the new currentTotal needs to be formatted
-            // check: units, tens, hundreds, thousands
-            // 4 or 9 ? then format, and break to the (for...in)
-
-            let stringTotal = String(currentTotal);
-            
-
-
+            num -= ROMAN_NUMS_OBJ[key];
             str += key;
-            // console.log(str)
-            // console.log(`${key} : ${RN_OBJ[key]}`);
 
+            // if (num == 0) return str;
+            // console.log(num);
+            if (num == 0) break;
         }
-        // return str
+
+        // while ((currentTotal + ROMAN_NUMS_OBJ[key]) <= num) {
+        //     currentTotal += ROMAN_NUMS_OBJ[key];
+        //     str += key;
+        //     console.log(`${key}: ${str}`);
+        // }
     }
     return str;
 }
@@ -91,8 +83,8 @@ function convertToRoman(num) {
 
 
 // console.log(convertToRoman(2))  // II.
-console.log(convertToRoman(3))  // III.
-console.log(convertToRoman(4))  // IV.
+// console.log(convertToRoman(3))  // III.
+// console.log(convertToRoman(4))  // IV.
 // console.log(convertToRoman(5))  // V.
 // console.log(convertToRoman(9))  // IX.
 // console.log(convertToRoman(12)) // XII.
@@ -102,7 +94,7 @@ console.log(convertToRoman(4))  // IV.
 // console.log(convertToRoman(45)) // XLV.
 // console.log(convertToRoman(68)) // LXVIII
 // console.log(convertToRoman(83)) // LXXXIII
-// console.log(convertToRoman(97)) // XCVII
+console.log(convertToRoman(97)) // XCVII
 // console.log(convertToRoman(99)) // XCIX
 // console.log(convertToRoman(400))    // CD
 // console.log(convertToRoman(500))    // D
