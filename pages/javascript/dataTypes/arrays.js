@@ -1,11 +1,11 @@
 import React, { useState } from 'react';
 
-import QuestionCard from '../../components/cards/QuestionCard';
-import NextButton from '../../components/buttons/NextButton';
-import PreviousButton from '../../components/buttons/PreviousButton';
-import { stringData } from '../../data/index';
+import QuestionCard from '../../../components/cards/QuestionCard';
+import NextButton from '../../../components/buttons/NextButton';
+import PreviousButton from '../../../components/buttons/PreviousButton';
+import { arrayData } from '../../../data/index';
 
-const strings = () => {
+const arrays = () => {
     const [questionNum, setQuestionNum] = useState(0);
     function nextButton() {
         setQuestionNum(questionNum + 1)
@@ -17,10 +17,10 @@ const strings = () => {
         <div className='flex flex-col h-full md:container mx-auto'>
             <div className='flex-grow'>
                 <QuestionCard
-                    title={stringData[questionNum].title}
-                    functionName={stringData[questionNum].functionName}
-                    question={stringData[questionNum].question}
-                    answer={stringData[questionNum].answer}
+                    title={arrayData[questionNum].title}
+                    functionName={arrayData[questionNum].functionName}
+                    question={arrayData[questionNum].question}
+                    answer={arrayData[questionNum].answer}
                 />
             </div >
 
@@ -40,7 +40,7 @@ const strings = () => {
                         <NextButton
                             handleClick={nextButton}
                             disabled=
-                            {questionNum <= stringData.length - 1
+                            {questionNum <= arrayData.length - 1
                                 ? false
                                 : true
                             }
@@ -52,6 +52,6 @@ const strings = () => {
     );
 }
 
-export default strings;
+export default arrays;
 
 
