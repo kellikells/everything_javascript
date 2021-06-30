@@ -11,7 +11,7 @@ const responsiveDesignHome = () => {
             <div className='flex flex-col items-center justify-center p-2 gap-y-4 m-auto w-full'>
 
                 {CATEGORIES_ARR.map(item => (
-                    <MenuItem dir='responsiveDesign' fileName={item} />
+                    <MenuItem pathname='null' dir='responsiveDesign' fileName={item} />
                 ))}
 
                 {/* {CATEGORIES_ARR.map(slug => (

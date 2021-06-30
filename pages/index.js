@@ -13,7 +13,7 @@ const Home = () => {
    
 
         {HOME_MENU.map(item => (
-          <MenuItem dir='null' fileName={item}/>
+          <MenuItem pathname='null' dir='null' fileName={item}/>
         ))}
 
       {/* {CATEGORIES_ARR.map(slug => (

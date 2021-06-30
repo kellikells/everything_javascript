@@ -6,50 +6,52 @@ import React, { useState } from 'react';
 // import { stringData } from '../../data/index';
 
 const palindromeChecker = () => {
-    // const [questionNum, setQuestionNum] = useState(0);
-    // function nextButton() {
-    //     setQuestionNum(questionNum + 1)
-    // }
-    // function previousButton() {
-    //     setQuestionNum(questionNum - 1)
-    // }
-    // return (
-    //     <div className='flex flex-col h-full md:container mx-auto'>
-    //         <div className='flex-grow'>
-    //             <QuestionCard
-    //                 title={stringData[questionNum].title}
-    //                 functionName={stringData[questionNum].functionName}
-    //                 question={stringData[questionNum].question}
-    //                 answer={stringData[questionNum].answer}
-    //             />
-    //         </div >
+    const [userInput, setUserInput] = useState('');
+    const [result, setResult] = useState('');
 
-    //         <footer >
-    //             <div className='flex justify-between'>
-    //                 <div className='w-1/5'>
-    //                     <PreviousButton
-    //                         handleClick={previousButton}
-    //                         disabled=
-    //                         {questionNum >= 1
-    //                             ? false
-    //                             : true
-    //                         }
-    //                     />
-    //                 </div>
-    //                 <div className='w-1/5'>
-    //                     <NextButton
-    //                         handleClick={nextButton}
-    //                         disabled=
-    //                         {questionNum <= stringData.length - 1
-    //                             ? false
-    //                             : true
-    //                         }
-    //                     />
-    //                 </div>
-    //             </div>
-    //         </footer>
-    //     </div>
-    // );
+    function handleChange(e) {
+        setUserInput(e.target.value);
+        ignoreCase(userInput)
+    }
+
+
+    function ignoreCase(str) {
+        let arr = str.toLowerCase().split('');
+        let reversedArr = [];
+        for (let i = arr.length - 1; i >= 0; i--) {
+            reversedArr.push(arr[i]);
+        }
+        let reversedStr = reversedArr.join('');
+        if (reversedStr == str.toLowerCase()) {
+            setResult('true');
+        }
+        else {
+            setResult('false');
+        }
+    }
+
+
+    return (
+        <div className=' md:container mx-auto'>
+            <label htmlFor='userInput'>Palindrome Checker
+                <input
+                    onChange={handleChange}
+                    value={userInput}
+                    id='userInput'
+                    name='userInput'
+                    type='text'
+                    placeholder='type here'
+                />
+            </label>
+
+
+            {result == 'true'
+                ? <div> true </div>
+                : <div> false</div>
+            }
+
+        </div>
+    );
 }
 
 export default palindromeChecker;

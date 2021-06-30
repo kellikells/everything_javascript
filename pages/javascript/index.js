@@ -1,4 +1,5 @@
 import Link from 'next/link';
+import { useRouter } from 'next/router';
 
 import MenuItem from '../../components/commons/MenuItem';
 
@@ -6,12 +7,20 @@ const JavaScriptHome = () => {
 
     const CATEGORIES_ARR = ['strings', 'arrays', 'objects', 'methods'];
 
+    const router = useRouter();
+    const queryObj = router.query;
+    // const whatRoute = queryObj.
+    // console.log(queryObj.slug)
+    const path = router.pathname;
+
     return (
         <div className='flex w-1/2 h-full mx-auto md:h-5/6 '>
             <div className='flex flex-col items-center justify-center p-2 gap-y-4 m-auto w-full'>
 
+            
+
                 {CATEGORIES_ARR.map(item => (
-                    <MenuItem dir='javascript/dataTypes' fileName={item} />
+                    <MenuItem pathname={path} dir='dataTypes' fileName={item} />
                 ))}
 
                 {/* {CATEGORIES_ARR.map(slug => (
