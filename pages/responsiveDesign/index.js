@@ -4,14 +4,14 @@ import MenuItem from '../../components/commons/MenuItem';
 
 const responsiveDesignHome = () => {
 
-    const CATEGORIES_ARR = ['strings', 'arrays', 'objects', 'methods'];
+    const CATEGORIES_ARR = ['imageOptions', 'anchorJumpToBottom'];
 
     return (
         <div className='flex w-1/2 h-full mx-auto md:h-5/6 '>
             <div className='flex flex-col items-center justify-center p-2 gap-y-4 m-auto w-full'>
 
                 {CATEGORIES_ARR.map(item => (
-                    <MenuItem pathname='null' dir='responsiveDesign' fileName={item} />
+                    <MenuItem pathname='null' dir='responsiveDesign' fileName={item} key={item} />
                 ))}
 
                 {/* {CATEGORIES_ARR.map(slug => (

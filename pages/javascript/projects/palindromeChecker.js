@@ -1,59 +1,72 @@
-import React, { useState } from 'react';
+import React, { useState, useMemo } from 'react';
 
-// import QuestionCard from '../../components/data_types_cards/QuestionCard';
-// import NextButton from '../../components/buttons/NextButton';
-// import PreviousButton from '../../components/buttons/PreviousButton';
-// import { stringData } from '../../data/index';
+import GenericHeader from '../../../components/commons/GenericHeader';
+import ClearButton from '../../../components/buttons/ClearButton';
 
-const palindromeChecker = () => {
+function palindromeChecker() {
     const [userInput, setUserInput] = useState('');
-    const [result, setResult] = useState('');
 
     function handleChange(e) {
         setUserInput(e.target.value);
-        ignoreCase(userInput)
+    }
+
+    function handleClick(e) {
+        setUserInput('');
     }
 
 
-    function ignoreCase(str) {
-        let arr = str.toLowerCase().split('');
-        let reversedArr = [];
-        for (let i = arr.length - 1; i >= 0; i--) {
-            reversedArr.push(arr[i]);
-        }
-        let reversedStr = reversedArr.join('');
-        if (reversedStr == str.toLowerCase()) {
-            setResult('true');
-        }
-        else {
-            setResult('false');
-        }
-    }
+
+
+    // function ignoreCase(userInput) {
+    //     let arr = userInput.toLowerCase().split('');
+    //     let reversedStr = arr.reverse().join('');
+    //     // await setResult((reversedStr == userInput.toLowerCase()));
+    //     if (reversedStr == userInput.toLowerCase()) {
+    //         setResult('True')
+    //     } else {
+    //         setResult('False')
+    //     }
+    // }
+    const ignoreCase = useMemo(() => {
+        if (userInput == null) return null;
+        return userInput.toLowerCase() === userInput.split('').reverse().join('').toLowerCase();
+    }, [userInput]);
+
+
 
 
     return (
-        <div className=' md:container mx-auto'>
-            <label htmlFor='userInput'>Palindrome Checker
-                <input
-                    onChange={handleChange}
-                    value={userInput}
-                    id='userInput'
-                    name='userInput'
-                    type='text'
-                    placeholder='type here'
-                />
-            </label>
+        <div className='flex flex-col h-full md:container mx-auto '>
 
+            <GenericHeader title='Palindrome Checker' />
 
-            {result == 'true'
-                ? <div> true </div>
-                : <div> false</div>
-            }
+            <section className='flex justify-between'>
+                <section>
+                    <input
+                        onChange={handleChange}
+                        value={userInput}
+                        id='userInput'
+                        name='userInput'
+                        type='text'
+                        placeholder='type here'
+                        className='p-3 border-gray-500 bg-yellow-100 flex-grow'
+                    />
+                </>
+                <ClearButton handleClick={handleClick} />
+            </section>
 
+            <div className='flex justify-between'>
+                Palindrome, ignoring character case:<strong>
+                    {ignoreCase == null
+                        ? null
+                        : ignoreCase
+                            ? 'Yes'
+                            : 'No'}
+                </strong>
+            </div>
         </div>
     );
 }
 
 export default palindromeChecker;
-
 

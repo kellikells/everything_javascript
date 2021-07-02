@@ -2,6 +2,7 @@ import Link from 'next/link';
 import { useRouter } from 'next/router';
 
 import MenuItem from '../../components/commons/MenuItem';
+import GenericHeader from '../../components/commons/GenericHeader';
 
 const JavaScriptHome = () => {
 
@@ -14,13 +15,13 @@ const JavaScriptHome = () => {
     const path = router.pathname;
 
     return (
-        <div className='flex w-1/2 h-full mx-auto md:h-5/6 '>
+        <div className='flex w-3/4 h-full mx-auto md:h-5/6 '>
             <div className='flex flex-col items-center justify-center p-2 gap-y-4 m-auto w-full'>
 
-            
+            <GenericHeader title={path.slice(1)}/>
 
                 {CATEGORIES_ARR.map(item => (
-                    <MenuItem pathname={path} dir='dataTypes' fileName={item} />
+                    <MenuItem pathname={path} dir='dataTypes' fileName={item} key={item} />
                 ))}
 
                 {/* {CATEGORIES_ARR.map(slug => (

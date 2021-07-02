@@ -8,12 +8,12 @@ const Home = () => {
   const HOME_MENU = ['javascript', 'responsiveDesign'];
 
   return (
-    <div className='flex w-1/2 h-full mx-auto md:h-5/6 '>
+    <div className='flex w-3/4 h-full mx-auto md:h-5/6 '>
       <div className='flex flex-col items-center justify-center p-2 gap-y-4 m-auto w-full'>
    
 
         {HOME_MENU.map(item => (
-          <MenuItem pathname='null' dir='null' fileName={item}/>
+          <MenuItem pathname='null' dir='null' fileName={item} key={item}/>
         ))}
 
       {/* {CATEGORIES_ARR.map(slug => (

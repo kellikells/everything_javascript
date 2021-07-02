@@ -2,76 +2,81 @@
 import React, { useState } from 'react';
 import { useRouter } from 'next/router';
 
+import jsDataTypesApi from '../../../api/javascript';
+
 import QuestionCard from '../../../../components/cards/QuestionCard';
 import NextButton from '../../../../components/buttons/NextButton';
 import PreviousButton from '../../../../components/buttons/PreviousButton';
 import { stringData, arrayData, methodData, objectData } from '../../../../data/index';
 
-const dataTypes = () => {
-    const router = useRouter();
-    const queryObj = router.query;
-    const dataType = queryObj.slug;
+const dataTypesPage = (props) => {
+    // const router = useRouter();
+    // const queryObj = router.query;
+    // const dataType = queryObj.slug;
 
-    let dataTypeData = (
-        dataType == 'strings'
-            ? { stringData }
-            : dataType == 'arrays'
-                ? { arrayData }
-                : dataType == 'methods'
-                    ? { methodData }
-                    : { objectData }
-    )
+    // let dataTypeData = (
+    //     dataType == 'strings'
+    //         ? { stringData }
+    //         : dataType == 'arrays'
+    //             ? { arrayData }
+    //             : dataType == 'methods'
+    //                 ? { methodData }
+    //                 : { objectData }
+    // )
 
 
-    const [questionNum, setQuestionNum] = useState(0);
+    // const [questionNum, setQuestionNum] = useState(0);
 
-    function nextButton() {
-        setQuestionNum(questionNum + 1)
-    }
-    function previousButton() {
-        setQuestionNum(questionNum - 1)
-    }
+    // function nextButton() {
+    //     setQuestionNum(questionNum + 1)
+    // }
+    // function previousButton() {
+    //     setQuestionNum(questionNum - 1)
+    // }
     return (
-        <div className='flex flex-col h-full md:container mx-auto'>
-            <div className='flex-grow'>
-
-                <QuestionCard
-                    title={stringData[questionNum].title}
-                    functionName={stringData[questionNum].functionName}
-                    question={stringData[questionNum].question}
-                    answer={stringData[questionNum].answer}
-                />
-            </div >
-
-            <footer >
-                <div className='flex justify-between'>
-                    <div className='w-1/5 md:w-32'>
-                        <PreviousButton
-                            handleClick={previousButton}
-                            disabled=
-                            {questionNum >= 1
-                                ? false
-                                : true
-                            }
-                        />
-                    </div>
-                    <div className='w-1/5 md:w-32'>
-                        <NextButton
-                            handleClick={nextButton}
-                            disabled=
-                            {questionNum <= stringData.length - 1
-                                ? false
-                                : true
-                            }
-                        />
-                    </div>
-                </div>
-            </footer>
+        <div>
+            <jsDataTypesApi />
         </div>
+        // <div className='flex flex-col h-full md:container mx-auto'>
+        //     <div className='flex-grow'>
+
+        //         <QuestionCard
+        //             title={stringData[questionNum].title}
+        //             functionName={stringData[questionNum].functionName}
+        //             question={stringData[questionNum].question}
+        //             answer={stringData[questionNum].answer}
+        //         />
+        //     </div >
+
+        //     <footer >
+        //         <div className='flex justify-between'>
+        //             <div className='w-1/5 md:w-32'>
+        //                 <PreviousButton
+        //                     handleClick={previousButton}
+        //                     disabled=
+        //                     {questionNum >= 1
+        //                         ? false
+        //                         : true
+        //                     }
+        //                 />
+        //             </div>
+        //             <div className='w-1/5 md:w-32'>
+        //                 <NextButton
+        //                     handleClick={nextButton}
+        //                     disabled=
+        //                     {questionNum <= stringData.length - 1
+        //                         ? false
+        //                         : true
+        //                     }
+        //                 />
+        //             </div>
+        //         </div>
+        //     </footer>
+        // </div>
     );
 }
 
-export default dataTypes;
+export default dataTypesPage;
 
 
 // --------------------------------------------
