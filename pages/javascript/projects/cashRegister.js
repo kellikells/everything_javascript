@@ -1,3 +1,8 @@
+import React, { useState, useMemo } from 'react';
+
+import GenericHeader from '../../../components/commons/GenericHeader';
+import ClearButton from '../../../components/buttons/ClearButton';
+
 // Design a cash register drawer function checkCashRegister() that accepts purchase price as the first argument (price), payment as the second argument (cash), and cash-in-drawer (cid) as the third argument.
 
 // cid is a 2D array listing available currency.
@@ -104,7 +109,41 @@ function checkCashRegister(price, cash, cid) {
         }
     }
     console.log(`the end ${change}`)
-    return change;
+    // return change;
+
+  
+         return (
+        <div className='flex flex-col h-full md:container mx-auto '>
+
+            <GenericHeader title='Cash' />
+
+            <section className='flex justify-between'>
+                <section>
+                    <input
+                        onChange={handleChange}
+                        value={userInput}
+                        id='userInput'
+                        name='userInput'
+                        type='text'
+                        placeholder='type here'
+                        className='p-3 border-gray-500 bg-yellow-100 flex-grow'
+                    />
+                </section>
+                <ClearButton handleClick={handleClick} />
+            </section>
+
+            <div className='flex justify-between'>
+                Palindrome, ignoring character case:<strong>
+                    {ignoreCase == null
+                        ? null
+                        : ignoreCase
+                            ? 'Yes'
+                            : 'No'}
+                </strong>
+            </div>
+        </div>
+    );
+    
 
 }
 

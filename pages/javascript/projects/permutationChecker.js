@@ -1,3 +1,8 @@
+import React, { useState, useMemo } from 'react';
+
+import GenericHeader from '../../../components/commons/GenericHeader';
+import ClearButton from '../../../components/buttons/ClearButton';
+
 // check if something is a palindrome permutation (assume everything is UPPERCASE)
 
 // 1- split str into an array
@@ -6,6 +11,7 @@
 
 
 function permutationCheck(str) {
+    
 
     let letterArr = str.split('');
     let countObj = {};

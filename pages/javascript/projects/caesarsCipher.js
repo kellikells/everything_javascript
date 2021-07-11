@@ -1,34 +1,86 @@
-// Caesars Cipher
-// One of the simplest and most widely known ciphers is a Caesar cipher, also known as a shift cipher.In a shift cipher the meanings of the letters are shifted by some set amount.
+import React, { useState, useMemo } from 'react';
 
-// A common modern use is the ROT13 cipher, where the values of the letters are shifted by 13 places.Thus A ↔ N, B ↔ O and so on.
+import GenericHeader from '../../../components/commons/GenericHeader';
+import ClearButton from '../../../components/buttons/ClearButton';
 
-// Write a function which takes a ROT13 encoded string as input and returns a decoded string.
+function palindromeChecker() {
+    const [userInput, setUserInput] = useState('');
 
-// All letters will be uppercase.Do not transform any non - alphabetic character(i.e.spaces, punctuation), but do pass them on.
+    function handleChange(e) {
+        setUserInput(e.target.value);
+    }
 
-function rot13(str) {
-    let arr = str.split('');
-    // console.log(arr)
-    let shiftedArr = [];
+    function handleClick(e) {
+        setUserInput('');
+    }
 
-    // loop through split str, and get charCode + 13
-    for (let i = 0; i < arr.length; i++) {
-        if (arr[i].match(/[^A-Z]/)) {
-            // console.log(`space at index: ${i}`)
-            shiftedArr.push(arr[i]);
-        } else {
-            let numberVal = arr[i].charCodeAt(0);
-            if ((numberVal + 13) <= 90) {
-                shiftedArr.push(String.fromCharCode(numberVal + 13));
-            }
-            else {
-                shiftedArr.push(String.fromCharCode(numberVal - 13));
+    // const ignoreCase = useMemo(() => {
+    //     if (userInput == null) return null;
+    //     return userInput.toLowerCase() === userInput.split('').reverse().join('').toLowerCase();
+    // }, [userInput]);
+
+
+
+    const rot13 = (str) => {
+        let arr = str.split('');
+        // console.log(arr)
+        let shiftedArr = [];
+
+        // loop through split str, and get charCode + 13
+        for (let i = 0; i < arr.length; i++) {
+            if (arr[i].match(/[^A-Z]/)) {
+                // console.log(`space at index: ${i}`)
+                shiftedArr.push(arr[i]);
+            } else {
+                let numberVal = arr[i].charCodeAt(0);
+                if ((numberVal + 13) <= 90) {
+                    shiftedArr.push(String.fromCharCode(numberVal + 13));
+                }
+                else {
+                    shiftedArr.push(String.fromCharCode(numberVal - 13));
+                }
             }
         }
+        return shiftedArr.join('');
     }
-    return shiftedArr.join('');
+
+
+
+    return (
+        <div className='flex flex-col h-full md:container mx-auto '>
+
+            <GenericHeader title="Ceasar\'s Cipher"/>
+
+            <section className='flex justify-between'>
+                <section>
+                    <input
+                        onChange={handleChange}
+                        value={userInput}
+                        id='userInput'
+                        name='userInput'
+                        type='text'
+                        placeholder='type here'
+                        className='p-3 border-gray-500 bg-yellow-100 flex-grow'
+                    />
+                
+                </section>
+                <ClearButton handleClick={handleClick} />
+            </section>
+
+            <div className='flex justify-between'>
+                Palindrome, ignoring character case:<strong>
+                    {ignoreCase == null
+                        ? null
+                        : ignoreCase
+                            ? 'Yes'
+                            : 'No'}
+                </strong>
+            </div>
+        </div>
+    );
 }
+
+export default palindromeChecker;
 
 console.log(rot13("SERR PBQR PNZC"))// FREE CODE CAMP
 console.log(rot13("SERR CVMMN!"))// FREE PIZZA!
