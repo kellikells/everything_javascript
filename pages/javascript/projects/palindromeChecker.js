@@ -4,7 +4,7 @@ import GenericHeader from '../../../components/commons/GenericHeader';
 import ClearButton from '../../../components/buttons/ClearButton';
 
 function palindromeChecker() {
-    const [userInput, setUserInput] = useState('');
+    const [userInput, setUserInput] = useState('type here');
 
     function handleChange(e) {
         setUserInput(e.target.value);
@@ -13,8 +13,6 @@ function palindromeChecker() {
     function handleClick(e) {
         setUserInput('');
     }
-
-
 
     const ignoreCase = useMemo(() => {
         if (userInput == null) return null;
@@ -34,6 +32,7 @@ function palindromeChecker() {
                     <input
                         onChange={handleChange}
                         value={userInput}
+
                         id='userInput'
                         name='userInput'
                         type='text'
@@ -46,7 +45,7 @@ function palindromeChecker() {
 
             <div className='flex justify-between'>
                 Palindrome, ignoring character case:<strong>
-                    {ignoreCase == null
+                    {userInput == 'type here' || userInput.length == 0
                         ? null
                         : ignoreCase
                             ? 'Yes'
