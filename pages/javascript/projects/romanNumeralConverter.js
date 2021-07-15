@@ -1,8 +1,7 @@
-import React, { useState, useMemo } from 'react';
+import React, { useState, useEffect } from 'react';
 
 import GenericHeader from '../../../components/commons/GenericHeader';
 import ClearButton from '../../../components/buttons/ClearButton';
-
 
 const ROMAN_NUMS_OBJ = {
     M: 1000,
@@ -20,25 +19,20 @@ const ROMAN_NUMS_OBJ = {
     I: 1,
 }
 
-
 function romanNumeralConverter() {
     const [userInput, setUserInput] = useState('');
+    const [output, setOutput] = useState('');
 
     function handleChange(e) {
         setUserInput(e.target.value);
     }
-
     function handleClick(e) {
         setUserInput('');
     }
 
-
-
-    const converter = ((userInput) => {
+    const converter = (userInput) => {
         if (userInput == null) return null;
 
-
-        let currentTotal = 0;
         let str = '';
         for (let key in ROMAN_NUMS_OBJ) {
 
@@ -48,46 +42,46 @@ function romanNumeralConverter() {
 
                 userInput -= ROMAN_NUMS_OBJ[key];
                 str += key;
-
-                // if (num == 0) return str;
                 if (userInput == '0') break;
             }
         }
-        return str;
-    }, [userInput]);
-}
+        setOutput(str);
+    };
 
-return (
-    <div className='flex flex-col h-full md:container mx-auto '>
+    useEffect(() => {
+        converter(userInput);
+    })
 
-        <GenericHeader title='Roman Numeral Converter' />
+    return (
+        <div className='flex flex-col h-full md:container mx-auto '>
 
-        <section className='flex justify-between'>
-            <section>
-                <input
-                    onChange={handleChange}
-                    value={userInput}
-                    id='userInput'
-                    name='userInput'
-                    type='text'
-                    placeholder='type here'
-                    className='p-3 border-gray-500 bg-yellow-100 flex-grow'
-                />
+            <GenericHeader title='Roman Numeral Converter' />
+
+            <section className='flex justify-between'>
+                <section >
+                    <input
+                        onChange={handleChange}
+                        value={userInput}
+                        id='userInput'
+                        name='userInput'
+                        type='text'
+                        placeholder='type here'
+                        className='p-3 border-gray-500 bg-yellow-200 flex-grow w-96'
+                    />
+                </section>
+                <ClearButton handleClick={handleClick} />
             </section>
-            <ClearButton handleClick={handleClick} />
-        </section>
 
-        <div className='flex justify-between'>
-            Roman Numeral equivalent:<strong>
-                {converter == null
-                    ? null
-                    : converter
-                }
-            </strong>
+            <div className='flex justify-between mt-7'>
+                Roman Numeral Equivalent:<strong>
+                    {userInput == 'type here' || userInput.length == 0
+                        ? null
+                        : output
+                    }
+                </strong>
+            </div>
         </div>
-    </div>
-);
-
-
+    );
+}
 export default romanNumeralConverter;
 

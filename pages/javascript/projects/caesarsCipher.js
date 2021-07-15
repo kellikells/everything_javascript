@@ -49,33 +49,35 @@ function palindromeChecker() {
     return (
         <div className='flex flex-col h-full md:container mx-auto '>
 
-            <GenericHeader title="Ceasar\'s Cipher"/>
+            <GenericHeader title='Palindrome Checker' />
 
             <section className='flex justify-between'>
-                <section>
+                <section >
                     <input
                         onChange={handleChange}
                         value={userInput}
+
                         id='userInput'
                         name='userInput'
                         type='text'
                         placeholder='type here'
-                        className='p-3 border-gray-500 bg-yellow-100 flex-grow'
+                        className='p-3 border-gray-500 bg-yellow-200 flex-grow w-96'
                     />
-                
                 </section>
                 <ClearButton handleClick={handleClick} />
             </section>
 
-            <div className='flex justify-between'>
+            <div className='flex justify-between mt-7'>
                 Palindrome, ignoring character case:<strong>
-                    {ignoreCase == null
+                    {userInput == 'type here' || userInput.length == 0
                         ? null
                         : ignoreCase
                             ? 'Yes'
                             : 'No'}
                 </strong>
             </div>
+
+            {/* <BackButton/> */}
         </div>
     );
 }
