@@ -1,35 +1,26 @@
-import React, { useState, useMemo } from 'react';
+import React, { useState, useEffect } from 'react';
 
 import GenericHeader from '../../../components/commons/GenericHeader';
 import ClearButton from '../../../components/buttons/ClearButton';
 
-function palindromeChecker() {
+function caesarsCipher() {
     const [userInput, setUserInput] = useState('');
+    const [output, setOutput] = useState('');
 
     function handleChange(e) {
         setUserInput(e.target.value);
     }
-
     function handleClick(e) {
         setUserInput('');
     }
 
-    // const ignoreCase = useMemo(() => {
-    //     if (userInput == null) return null;
-    //     return userInput.toLowerCase() === userInput.split('').reverse().join('').toLowerCase();
-    // }, [userInput]);
-
-
-
-    const rot13 = (str) => {
-        let arr = str.split('');
-        // console.log(arr)
+    const rot13 = (userInput) => {  
+        let arr = userInput.split('');
         let shiftedArr = [];
 
         // loop through split str, and get charCode + 13
         for (let i = 0; i < arr.length; i++) {
             if (arr[i].match(/[^A-Z]/)) {
-                // console.log(`space at index: ${i}`)
                 shiftedArr.push(arr[i]);
             } else {
                 let numberVal = arr[i].charCodeAt(0);
@@ -41,22 +32,24 @@ function palindromeChecker() {
                 }
             }
         }
-        return shiftedArr.join('');
+        let result = shiftedArr.join('');
+        setOutput(result);
     }
 
-
+    useEffect(() => {
+        rot13(userInput);
+    })
 
     return (
         <div className='flex flex-col h-full md:container mx-auto '>
 
-            <GenericHeader title='Palindrome Checker' />
+            <GenericHeader title="Caesar's Cipher" />
 
             <section className='flex justify-between'>
                 <section >
                     <input
                         onChange={handleChange}
                         value={userInput}
-
                         id='userInput'
                         name='userInput'
                         type='text'
@@ -68,22 +61,15 @@ function palindromeChecker() {
             </section>
 
             <div className='flex justify-between mt-7'>
-                Palindrome, ignoring character case:<strong>
+                Caesar's Cipher:<strong>
                     {userInput == 'type here' || userInput.length == 0
                         ? null
-                        : ignoreCase
-                            ? 'Yes'
-                            : 'No'}
+                        : output
+                    }
                 </strong>
             </div>
-
-            {/* <BackButton/> */}
         </div>
     );
 }
+export default caesarsCipher;
 
-export default palindromeChecker;
-
-console.log(rot13("SERR PBQR PNZC"))// FREE CODE CAMP
-console.log(rot13("SERR CVMMN!"))// FREE PIZZA!
-console.log(rot13("SERR YBIR?"))// FREE LOVE?

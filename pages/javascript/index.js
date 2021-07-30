@@ -34,19 +34,19 @@ const JavaScriptHome = () => {
                     </Link>
                 ))} */}
 
-                <Link href='/javascript/projects/palindromeChecker'><a className='w-1/2 px-4 py-3 text-center bg-green-400 text-4xl hover:bg-white font-bold text-white hover:text-gray-900 rounded-lg hover:shadow-xl transition duration-300'>Palindrome Checker</a></Link>
+           
 
                 <Link href='/javascript/projects/palindromeChecker'><a className='w-1/2 px-4 py-3 text-center bg-yellow-400 text-4xl hover:bg-white font-bold text-white hover:text-gray-900 rounded-lg hover:shadow-xl transition duration-300'>Palindrome Checker</a></Link>
 
-                <Link href='/javascript/projects/caesarsCipher'><a className='w-1/2 px-4 py-3 text-center bg-yellow-400 text-4xl hover:bg-white font-bold text-white hover:text-gray-900 rounded-lg hover:shadow-xl transition duration-300'>Caesars Cipher</a></Link>
 
                 <Link href='/javascript/projects/romanNumeralConverter'><a className='w-1/2 px-4 py-3 text-center bg-yellow-400 text-4xl hover:bg-white font-bold text-white hover:text-gray-900 rounded-lg hover:shadow-xl transition duration-300'>Roman Numeral Converter</a></Link>
+           
+           
+                <Link href='/javascript/projects/phoneNumberFormat'><a className='w-1/2 px-4 py-3 text-center bg-yellow-400 text-4xl hover:bg-white font-bold text-white hover:text-gray-900 rounded-lg hover:shadow-xl transition duration-300'>Phone Number Converter</a></Link>
 
-                {/* <Link href='/javascript/dataTypes/arrays'><a className='w-1/2 px-4 py-3 text-center bg-green-400 text-4xl hover:bg-white font-bold text-white hover:text-gray-900 rounded-lg hover:shadow-xl transition duration-300'>Arrays</a></Link> */}
+                {/* <Link href='/javascript/converters'><a className='w-1/2 px-4 py-3 text-center bg-red-700 text-4xl hover:bg-white font-bold text-white hover:text-gray-900 rounded-lg hover:shadow-xl transition duration-300'>ALL converters</a></Link> */}
 
-                {/* <Link href='/javascript/dataTypes/objects'><a className='w-1/2 px-4 py-3 text-center bg-yellow-400 text-4xl hover:bg-white font-bold text-white hover:text-gray-900 rounded-lg hover:shadow-xl transition duration-300'>Objects</a></Link> */}
-
-                {/* <Link href='/javascript/dataTypes/numbers'><a className='w-1/2 px-4 py-3 text-center bg-green-400 text-4xl hover:bg-white font-bold text-white hover:text-gray-900 rounded-lg hover:shadow-xl transition duration-300'>Numbers</a></Link>  */}
+          
             </div>
 
         </div>
