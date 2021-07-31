@@ -42,7 +42,7 @@ const JavaScriptHome = () => {
                 <Link href='/javascript/projects/romanNumeralConverter'><a className='w-1/2 px-4 py-3 text-center bg-yellow-400 text-4xl hover:bg-white font-bold text-white hover:text-gray-900 rounded-lg hover:shadow-xl transition duration-300'>Roman Numeral Converter</a></Link>
            
            
-                <Link href='/javascript/projects/phoneNumberFormat'><a className='w-1/2 px-4 py-3 text-center bg-yellow-400 text-4xl hover:bg-white font-bold text-white hover:text-gray-900 rounded-lg hover:shadow-xl transition duration-300'>Phone Number Converter</a></Link>
+                <Link href='/javascript/projects/cashRegister'><a className='w-1/2 px-4 py-3 text-center bg-yellow-400 text-4xl hover:bg-white font-bold text-white hover:text-gray-900 rounded-lg hover:shadow-xl transition duration-300'>Cash Register</a></Link>
 
                 {/* <Link href='/javascript/converters'><a className='w-1/2 px-4 py-3 text-center bg-red-700 text-4xl hover:bg-white font-bold text-white hover:text-gray-900 rounded-lg hover:shadow-xl transition duration-300'>ALL converters</a></Link> */}
 
