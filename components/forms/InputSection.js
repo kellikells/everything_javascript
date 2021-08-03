@@ -5,11 +5,10 @@ export const InputSection = ({userInput, labelText, handleChange, placeholder, c
                 ? 'flex flex-col'
                 : 'flex flex-row'
         }>
-            <label for={userInput}>{labelText} </label>
+            <label htmlFor={userInput}>{labelText} </label>
             <input
-                // onChange={}
                 onChange={handleChange}
-                value={userInput}
+                // value={userInput}
                 id={userInput}
                 name={userInput}
                 type='text'

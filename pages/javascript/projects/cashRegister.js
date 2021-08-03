@@ -152,13 +152,13 @@ export default function cashRegister() {
         <div className='flex flex-col h-full md:container mx-auto '>
 
             <GenericHeader title='Cash Register App' />
-
+<form>
             <section className='flex justify-between'>
 
-                {inputsObjArr.map((user) => (
-                    <section>
+                {inputsObjArr.map((user, index) => (
+                    <section key={index}>
                         <input
-                            // onChange={handleChangePrice}
+                            key= {index}
                             onChange={user.handleChange}
                             value={user.input}
                             id={user.input}
@@ -192,11 +192,11 @@ export default function cashRegister() {
             </div> */}
 
             <div className='flex flex-row'>
-                {registerInputsObjArr.map((currency) => (
-                    <InputSection userInput={currency.input} labelText={currency.text} handleChange={currency.set} column='yes' />
+                {registerInputsObjArr.map((currency, index) => (
+                    <InputSection key={index} userInput={currency.input} labelText={currency.text} handleChange={currency.set} column='yes' />
                 ))}
             </div>
-
+</form>
         </div>
     );
 
